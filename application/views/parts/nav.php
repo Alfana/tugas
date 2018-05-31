@@ -14,8 +14,13 @@
 
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">Menu Utama</li>
-        <li class="treeview">
+        <li class="header">Absensi</li>
+        <li class="<?php echo $ac = ($this->uri->segment(1)=='home'?"active":""); ?>">
+          <a href="<?= base_url('home')?>">
+            <i class="fa fa-home"></i> <span>Home</span>
+          </a>
+        </li>
+        <li class="treeview <?php echo $ac = ($this->uri->segment(1)=='absensi' && $this->uri->segment(2)==''?"active":""); ?>">
           <a href="<?= base_url('home')?>">
             <i class="fa fa-th"></i> <span>Mahasiswa</span>
             <span class="pull-right-container">
@@ -23,7 +28,7 @@
             </span>            
           </a>
             <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Absensi</a></li>              
+              <li class="<?php echo $ac = ($this->uri->segment(1)=='absensi' && $this->uri->segment(2)==''?"active":""); ?>"><a href="<?= base_url('absensi') ?>"><i class="fa fa-circle-o"></i> Absensi</a></li>              
               <li><a href="#"><i class="fa fa-circle-o"></i> Rekap</a></li>
               <!-- <li class="treeview">
                 <a href="#"><i class="fa fa-circle-o"></i> Level Two
@@ -37,6 +42,12 @@
                 </ul> -->
               </li>
             </ul>
+        </li>
+        <li class="header">Data</li>
+        <li class="<?php echo $ac = ($this->uri->segment(2)=='matkul'?"active":""); ?>">
+          <a href="<?= base_url('absensi/matkul')?>">
+            <i class="fa fa-th"></i> <span>Mata Kuliah</span>
+          </a>
         </li>
       </ul>
     </section>

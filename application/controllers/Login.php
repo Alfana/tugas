@@ -24,7 +24,7 @@ class Login extends CI_Controller {
 					'islogin' 	=> TRUE,
 		            'nama' => $data_user->nama
 				));
-			redirect('absensi/home');   
+			redirect('home');   
 		}else{
 			$this->session->set_userdata(array('error' => TRUE ));
 			redirect('login');
